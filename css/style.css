@@ -252,7 +252,7 @@ main {
 .about-box {
     position: relative;
     background: linear-gradient(120deg, rgba(36, 36, 34, 0.98) 0%, rgba(30, 30, 29, 0.98) 100%);
-    padding: 2.3rem 10.6rem 1.8rem 2rem;
+    padding: 2.3rem 13rem 1.8rem 2rem;
     border-radius: 16px;
     max-width: 980px;
     margin: 0 auto;
@@ -270,6 +270,7 @@ main {
     border-radius: 16px;
     background: linear-gradient(130deg, rgba(189, 184, 255, 0.2) 0%, rgba(145, 255, 231, 0.12) 45%, rgba(255, 225, 186, 0.16) 100%);
     opacity: 0.42;
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -282,26 +283,32 @@ main {
     top: -120px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(196, 192, 255, 0.3) 0%, rgba(196, 192, 255, 0) 72%);
+    z-index: 0;
     pointer-events: none;
 }
 
 .about-box > :not(.wipro-watermark) {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .wipro-watermark {
     position: absolute;
-    top: 1.15rem;
-    right: 1.05rem;
-    width: clamp(112px, 13.5vw, 146px);
+    top: 0.72rem;
+    right: 0.68rem;
+    width: clamp(152px, 18vw, 202px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0.17;
-    z-index: 0;
+    padding: 0.35rem 0.52rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    opacity: 0.78;
+    z-index: 1;
     pointer-events: none;
-    filter: saturate(1.1) contrast(1.06);
+    filter: saturate(1.2) contrast(1.16) brightness(1.08);
+    transform: rotate(-2deg);
     transition: opacity 0.3s ease;
 }
 
@@ -309,6 +316,7 @@ main {
     width: 100%;
     height: auto;
     object-fit: contain;
+    filter: saturate(1.2) contrast(1.08) drop-shadow(0 6px 10px rgba(0, 0, 0, 0.24));
 }
 
 .about-box:hover {
@@ -318,7 +326,7 @@ main {
 }
 
 .about-box:hover .wipro-watermark {
-    opacity: 0.24;
+    opacity: 0.95;
 }
 
 .profile-identity {
@@ -627,10 +635,12 @@ footer {
     }
 
     .wipro-watermark {
-        top: 0.9rem;
-        right: 0.8rem;
-        width: 82px;
-        opacity: 0.14;
+        top: 0.78rem;
+        right: 0.66rem;
+        width: 110px;
+        padding: 0.22rem 0.34rem;
+        border-radius: 10px;
+        opacity: 0.72;
     }
 
     .profile-identity {
