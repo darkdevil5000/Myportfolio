@@ -252,7 +252,7 @@ main {
 .about-box {
     position: relative;
     background: linear-gradient(120deg, rgba(36, 36, 34, 0.98) 0%, rgba(30, 30, 29, 0.98) 100%);
-    padding: 2.3rem 2rem 1.8rem;
+    padding: 2.3rem 12.2rem 1.8rem 2rem;
     border-radius: 16px;
     max-width: 980px;
     margin: 0 auto;
@@ -285,15 +285,52 @@ main {
     pointer-events: none;
 }
 
-.about-box > * {
+.about-box > :not(.wipro-watermark) {
     position: relative;
     z-index: 1;
+}
+
+.wipro-watermark {
+    position: absolute;
+    top: 1.3rem;
+    right: 1.25rem;
+    width: clamp(126px, 15vw, 168px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.36rem;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+    filter: saturate(1.1) contrast(1.06);
+    transition: opacity 0.3s ease;
+}
+
+.wipro-watermark img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.wipro-watermark span {
+    display: inline-block;
+    padding: 0.16rem 0.46rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e7dcbf;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
 }
 
 .about-box:hover {
     transform: translateY(-4px);
     border-color: rgba(255, 255, 255, 0.18);
     box-shadow: 0 30px 56px rgba(0, 0, 0, 0.42), 0 0 22px rgba(141, 255, 232, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.about-box:hover .wipro-watermark {
+    opacity: 0.28;
 }
 
 .profile-avatar {
@@ -559,6 +596,19 @@ footer {
     .about-box {
         padding: 1.7rem 1.2rem 1.3rem;
         border-radius: 14px;
+    }
+
+    .wipro-watermark {
+        top: 0.9rem;
+        right: 0.8rem;
+        width: 86px;
+        opacity: 0.17;
+        gap: 0.2rem;
+    }
+
+    .wipro-watermark span {
+        font-size: 0.6rem;
+        padding: 0.12rem 0.3rem;
     }
 
     .profile-avatar {
