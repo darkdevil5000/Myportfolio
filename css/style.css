@@ -9,7 +9,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #e0e0e0;
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    background: #000000;
     background-attachment: fixed;
     overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    background: #000000;
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: background-color 0.3s ease;
@@ -352,7 +352,7 @@ main {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    background: #000000;
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
