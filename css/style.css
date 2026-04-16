@@ -252,7 +252,7 @@ main {
 .about-box {
     position: relative;
     background: linear-gradient(120deg, rgba(36, 36, 34, 0.98) 0%, rgba(30, 30, 29, 0.98) 100%);
-    padding: 2.3rem 10.2rem 1.8rem 2rem;
+    padding: 2.3rem 11.4rem 1.8rem 2rem;
     border-radius: 16px;
     max-width: 980px;
     margin: 0 auto;
@@ -294,21 +294,21 @@ main {
 
 .wipro-watermark {
     position: absolute;
-    top: 0.95rem;
-    right: 0.86rem;
-    width: clamp(120px, 14.5vw, 158px);
-    opacity: 0.45;
+    top: 0.88rem;
+    right: 0.78rem;
+    width: clamp(132px, 16vw, 182px);
+    opacity: 0.74;
     z-index: 1;
     pointer-events: none;
-    filter: saturate(1.12) contrast(1.08);
-    transition: opacity 0.26s ease;
+    filter: saturate(1.45) contrast(1.28) brightness(1.28);
+    transition: opacity 0.26s ease, filter 0.26s ease;
 }
 
 .wipro-watermark img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.2));
+    filter: brightness(1.22) saturate(1.28) contrast(1.2) drop-shadow(0 0 14px rgba(255, 255, 255, 0.24)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 }
 
 .about-box:hover {
@@ -318,7 +318,8 @@ main {
 }
 
 .about-box:hover .wipro-watermark {
-    opacity: 0.56;
+    opacity: 0.92;
+    filter: saturate(1.55) contrast(1.32) brightness(1.35);
 }
 
 .profile-identity {
@@ -597,40 +598,76 @@ footer {
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
-        padding: 1rem;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.85rem 0.95rem 0.9rem;
+    }
+
+    .logo-container {
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.38rem;
+    }
+
+    .tagline {
+        opacity: 1;
+        transform: none;
+        font-size: 0.82rem;
     }
 
     .nav-links {
-        margin-top: 1rem;
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.42rem;
+        width: 100%;
     }
 
     .nav-links li {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        text-align: center;
+        font-size: 0.82rem;
+        line-height: 1.1;
+        white-space: nowrap;
+        padding: 0.42rem 0.35rem;
+        border: 1px solid rgba(0, 191, 166, 0.26);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    main {
+        margin-top: 186px;
     }
 
     .section {
-        padding: 2rem 1rem;
+        min-height: auto;
+        padding: 2.2rem 1rem;
     }
 
     #about {
-        padding-top: 5.8rem;
+        padding-top: 1.2rem;
     }
 
     .section h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .about-box {
-        padding: 1.7rem 1.2rem 1.3rem;
+        padding: 1.55rem 1rem 1.2rem;
         border-radius: 14px;
     }
 
     .wipro-watermark {
-        top: 0.82rem;
-        right: 0.64rem;
-        width: 92px;
-        opacity: 0.34;
+        top: 0.72rem;
+        right: 0.5rem;
+        width: 104px;
+        opacity: 0.66;
     }
 
     .profile-identity {
@@ -639,23 +676,31 @@ footer {
     }
 
     .profile-avatar {
-        width: 56px;
-        height: 56px;
-        font-size: 1.55rem;
+        width: 54px;
+        height: 54px;
+        font-size: 1.45rem;
     }
 
     .holder-tag {
-        font-size: 0.68rem;
-        padding: 0.24rem 0.5rem;
+        font-size: 0.66rem;
+        padding: 0.22rem 0.46rem;
     }
 
     .profile-meta {
-        font-size: 0.94rem;
+        font-size: 0.9rem;
+    }
+
+    .skill-badges {
+        gap: 0.5rem;
     }
 
     .skill-badge {
-        font-size: 0.92rem;
-        padding: 0.34rem 0.72rem;
+        font-size: 0.84rem;
+        padding: 0.32rem 0.62rem;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
     }
 
     .skills-grid,
@@ -666,6 +711,7 @@ footer {
     .contact-links {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 }
 
