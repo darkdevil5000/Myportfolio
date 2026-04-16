@@ -252,7 +252,7 @@ main {
 .about-box {
     position: relative;
     background: linear-gradient(120deg, rgba(36, 36, 34, 0.98) 0%, rgba(30, 30, 29, 0.98) 100%);
-    padding: 2.3rem 12.2rem 1.8rem 2rem;
+    padding: 2.3rem 10.6rem 1.8rem 2rem;
     border-radius: 16px;
     max-width: 980px;
     margin: 0 auto;
@@ -292,14 +292,13 @@ main {
 
 .wipro-watermark {
     position: absolute;
-    top: 1.3rem;
-    right: 1.25rem;
-    width: clamp(126px, 15vw, 168px);
+    top: 1.15rem;
+    right: 1.05rem;
+    width: clamp(112px, 13.5vw, 146px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.36rem;
-    opacity: 0.2;
+    opacity: 0.17;
     z-index: 0;
     pointer-events: none;
     filter: saturate(1.1) contrast(1.06);
@@ -312,17 +311,6 @@ main {
     object-fit: contain;
 }
 
-.wipro-watermark span {
-    display: inline-block;
-    padding: 0.16rem 0.46rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #e7dcbf;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-}
-
 .about-box:hover {
     transform: translateY(-4px);
     border-color: rgba(255, 255, 255, 0.18);
@@ -330,7 +318,15 @@ main {
 }
 
 .about-box:hover .wipro-watermark {
-    opacity: 0.28;
+    opacity: 0.24;
+}
+
+.profile-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.08rem;
+    flex-wrap: wrap;
 }
 
 .profile-avatar {
@@ -340,7 +336,7 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.35rem;
+    margin-bottom: 0;
     background: radial-gradient(circle at 28% 28%, #e8e7ff 0%, #cbc8fa 62%, #b7b4ef 100%);
     color: #3f3b8d;
     font-size: 1.9rem;
@@ -352,6 +348,38 @@ main {
 
 .about-box:hover .profile-avatar {
     transform: rotate(-6deg) scale(1.03);
+}
+
+.profile-holder-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.44rem;
+}
+
+.holder-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.28rem 0.62rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 760;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    line-height: 1;
+}
+
+.holder-tag:nth-child(1) {
+    background: rgba(206, 241, 234, 0.88);
+    color: #16584f;
+    border-color: rgba(125, 217, 198, 0.45);
+}
+
+.holder-tag:nth-child(2) {
+    background: rgba(237, 226, 206, 0.9);
+    color: #665021;
+    border-color: rgba(231, 210, 175, 0.45);
 }
 
 .about-box .profile-name {
@@ -601,21 +629,24 @@ footer {
     .wipro-watermark {
         top: 0.9rem;
         right: 0.8rem;
-        width: 86px;
-        opacity: 0.17;
-        gap: 0.2rem;
+        width: 82px;
+        opacity: 0.14;
     }
 
-    .wipro-watermark span {
-        font-size: 0.6rem;
-        padding: 0.12rem 0.3rem;
+    .profile-identity {
+        gap: 0.65rem;
+        margin-bottom: 0.9rem;
     }
 
     .profile-avatar {
         width: 56px;
         height: 56px;
         font-size: 1.55rem;
-        margin-bottom: 1rem;
+    }
+
+    .holder-tag {
+        font-size: 0.68rem;
+        padding: 0.24rem 0.5rem;
     }
 
     .profile-meta {
