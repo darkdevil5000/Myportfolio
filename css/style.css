@@ -259,24 +259,41 @@ main {
     text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
 }
 
-.profile-menu {
+.about-box::before {
+    content: "";
     position: absolute;
-    top: 12px;
-    right: 12px;
-    min-width: 32px;
-    height: 24px;
-    padding: 0 8px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #8f8f8f;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1.6px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    inset: -1px;
+    border-radius: 16px;
+    background: linear-gradient(130deg, rgba(189, 184, 255, 0.2) 0%, rgba(145, 255, 231, 0.12) 45%, rgba(255, 225, 186, 0.16) 100%);
+    opacity: 0.42;
+    pointer-events: none;
+}
+
+.about-box::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    right: -92px;
+    top: -120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 192, 255, 0.3) 0%, rgba(196, 192, 255, 0) 72%);
+    pointer-events: none;
+}
+
+.about-box > * {
+    position: relative;
+    z-index: 1;
+}
+
+.about-box:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 30px 56px rgba(0, 0, 0, 0.42), 0 0 22px rgba(141, 255, 232, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .profile-avatar {
@@ -291,6 +308,13 @@ main {
     color: #3f3b8d;
     font-size: 1.9rem;
     font-weight: 800;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+    transition: transform 0.26s ease;
+}
+
+.about-box:hover .profile-avatar {
+    transform: rotate(-6deg) scale(1.03);
 }
 
 .about-box .profile-name {
