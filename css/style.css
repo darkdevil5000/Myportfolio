@@ -149,36 +149,54 @@ header {
 .skill-badges {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
+    justify-content: flex-start;
+    gap: 0.62rem;
+    margin-top: 0;
     transition: all 0.3s ease;
-}
-
-.logo-container:hover .skill-badges {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .skill-badge {
-    background-color: transparent;
-    color: #e6e6e6;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: 1px solid #00bfa6;
-    transition: all 0.3s ease;
+    color: #2a2a2a;
+    padding: 0.4rem 0.86rem;
+    border-radius: 999px;
+    font-size: 1.02rem;
+    font-weight: 650;
+    line-height: 1.2;
+    border: none;
+    transition: transform 0.22s ease, filter 0.22s ease;
     cursor: pointer;
-    margin: 10px;
+    margin: 0;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .skill-badge:hover {
-    border-color: #00ffc8;
-    color: #00ffc8;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 191, 166, 0.3);
+    filter: brightness(0.96);
+}
+
+.skill-badge:nth-child(12n + 1),
+.skill-badge:nth-child(12n + 2),
+.skill-badge:nth-child(12n + 3),
+.skill-badge:nth-child(12n + 10) {
+    background: #dadcf8;
+    color: #3d3b8b;
+}
+
+.skill-badge:nth-child(12n + 4),
+.skill-badge:nth-child(12n + 5),
+.skill-badge:nth-child(12n + 6),
+.skill-badge:nth-child(12n + 11) {
+    background: #d6f0e9;
+    color: #1f675d;
+}
+
+.skill-badge:nth-child(12n + 7),
+.skill-badge:nth-child(12n + 8),
+.skill-badge:nth-child(12n + 9),
+.skill-badge:nth-child(12n + 12) {
+    background: #efe4d1;
+    color: #6b4d1f;
 }
 
 .nav-links {
@@ -211,6 +229,11 @@ main {
     padding: 4rem 2rem;
 }
 
+#about {
+    align-items: flex-start;
+    padding-top: 6.5rem;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -227,19 +250,69 @@ main {
 
 /* About section */
 .about-box {
-    background: linear-gradient(135deg, rgba(15, 32, 39, 0.8) 0%, rgba(32, 58, 67, 0.8) 50%, rgba(44, 83, 100, 0.8) 100%);
-    padding: 3rem;
-    border-radius: 12px;
-    max-width: 900px;
+    position: relative;
+    background: linear-gradient(120deg, rgba(36, 36, 34, 0.98) 0%, rgba(30, 30, 29, 0.98) 100%);
+    padding: 2.3rem 2rem 1.8rem;
+    border-radius: 16px;
+    max-width: 980px;
     margin: 0 auto;
-    text-align: center;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-#about p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+.profile-menu {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    min-width: 32px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #8f8f8f;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.35rem;
+    background: radial-gradient(circle at 28% 28%, #e8e7ff 0%, #cbc8fa 62%, #b7b4ef 100%);
+    color: #3f3b8d;
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.about-box .profile-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(2rem, 3.6vw, 2.35rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 0.25rem;
+}
+
+.profile-meta {
+    margin-bottom: 0.95rem;
+    color: #b3b1a7;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.meta-sep {
+    color: #8e8b82;
+    margin: 0 0.28rem;
 }
 
 /* Skills section */
@@ -451,8 +524,33 @@ footer {
         padding: 2rem 1rem;
     }
 
+    #about {
+        padding-top: 5.8rem;
+    }
+
     .section h2 {
         font-size: 2rem;
+    }
+
+    .about-box {
+        padding: 1.7rem 1.2rem 1.3rem;
+        border-radius: 14px;
+    }
+
+    .profile-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 1.55rem;
+        margin-bottom: 1rem;
+    }
+
+    .profile-meta {
+        font-size: 0.94rem;
+    }
+
+    .skill-badge {
+        font-size: 0.92rem;
+        padding: 0.34rem 0.72rem;
     }
 
     .skills-grid,
