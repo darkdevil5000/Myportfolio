@@ -51,6 +51,21 @@ header {
 
 .logo-container {
     display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.logo-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.logo-text {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -604,6 +619,15 @@ footer {
     }
 
     .logo-container {
+        align-items: center;
+    }
+
+    .logo-photo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo-text {
         align-items: center;
     }
 
